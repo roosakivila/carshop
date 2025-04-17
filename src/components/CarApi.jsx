@@ -96,7 +96,12 @@ function CarsApi() {
             },
             body: JSON.stringify(car)
         })
-            .then(response => fetchCars())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to save car');
+                }
+                return fetchCars();
+            })
             .catch(err => console.error(err))
         setSnackbarOpen(true);
         setSnackbarSeverity("success");

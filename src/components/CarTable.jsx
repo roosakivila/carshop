@@ -8,7 +8,7 @@ ModuleRegistry.registerModules([AllCommunityModule]);
 
 function CarTable({ cars, deleteCar, editCar }) {
 
-    const [colDefs, setColDefs] = useState([
+    const [colDefs] = useState([
         { field: "brand" },
         { field: "model" },
         { field: "color" },
